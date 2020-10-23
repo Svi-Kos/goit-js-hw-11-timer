@@ -43,23 +43,10 @@ const timer = new CountdownTimer({
 timer.start();
 
 function updateTimer({ days, hours, mins, secs, selector }) {
-  const refs = {
-    daysEl: document
-      .querySelector(`${selector}`)
-      .querySelector("span[data-value='days']"),
-    hoursEl: document
-      .querySelector(`${selector}`)
-      .querySelector("span[data-value='hours']"),
-    minsEl: document
-      .querySelector(`${selector}`)
-      .querySelector("span[data-value='mins']"),
-    secsEl: document
-      .querySelector(`${selector}`)
-      .querySelector("span[data-value='secs']"),
-  };
+  const selectorEl = document.querySelector(`${selector}`);
 
-  refs.daysEl.textContent = `${days}`;
-  refs.hoursEl.textContent = `${hours}`;
-  refs.minsEl.textContent = `${mins}`;
-  refs.secsEl.textContent = `${secs}`;
+  selectorEl.querySelector("span[data-value='days']").textContent = `${days}`;
+  selectorEl.querySelector("span[data-value='hours']").textContent = `${hours}`;
+  selectorEl.querySelector("span[data-value='mins']").textContent = `${mins}`;
+  selectorEl.querySelector("span[data-value='secs']").textContent = `${secs}`;
 }
